@@ -16,3 +16,11 @@
 - [WebSite](https://jikan.moe/)
 - [Docs](https://jikan.docs.apiary.io/)
 
+<h2>🔧 Requisitos</h2>
+
+- [Docker](https://www.docker.com/docker-community)
+- [Docker Composer](https://docs.docker.com/compose/install/)
+
+<h2>⚙️ Executar aplicação</h2>
+
+1. Execute o comando `docker-compose up -d`
