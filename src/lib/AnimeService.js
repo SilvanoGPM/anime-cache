@@ -3,15 +3,20 @@ const queryString = require('query-string');
 const api = require('./api');
 const useCache = require('../util/useCache');
 
+const cacheOptions = {
+  expirationTime: 60 * 60 // One hour
+};
+
 class AnimeService {
 
   async searchAnimes(params) {
     const resolvedParams = this.#resolveParams(params);
 
-    return useCache(resolvedParams, async () => {
-      const animes = await api.searchAnimes(resolvedParams);
-      return animes;
-    });
+    const callback = async () => (
+      api.searchAnimes(resolvedParams)
+    );
+
+    return useCache(resolvedParams, callback, cacheOptions);
   }
 
   #resolveParams(params) {
