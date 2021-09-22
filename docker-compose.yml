@@ -2,9 +2,14 @@ version: "3"
 
 services:
   api:
-    image: redis:latest
-    environment:
-      REDIS_HOST: localhost
-      REDIS_PORT: 6379
+    build: .
+    container_name: anime-cache
     ports:
-      - "6379:6379"
+      - "3000:3000"
+    environment:
+      - REDIS_HOST=redis-cache
+    depends_on:
+      - redis-cache
+  redis-cache:
+    image: redis
+    container_name: redis-cache
