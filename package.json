@@ -1,0 +1,19 @@
+{
+  "name": "anime-cache",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "debug": "^4.3.2",
+    "express": "^4.17.1",
+    "ioredis": "^4.27.9",
+    "query-string": "^7.0.1"
+  }
+}
